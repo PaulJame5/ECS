@@ -1,15 +1,16 @@
 #pragma once
-#include "Entity.h"
-#include "Systems.h"
-#include "FXComponent.h"
+#include "../Components/FXComponent.h"
 
 
 class FXSystem
 {
-	std::map<int, FXComponent> entities;
 
 public:
-	void addFXComponent(int entityId)
+	FXSystem() {};
+	~FXSystem() {};
+
+
+	static void addFXComponent(int entityId)
 	{
 		if (hasFXComponent(entityId))
 		{
@@ -18,7 +19,7 @@ public:
 		entities[entityId] = FXComponent();
 	}
 
-	FXComponent getFXComponent(int entityId)
+	static FXComponent getFXComponent(int entityId)
 	{
 		if (hasFXComponent(entityId))
 		{
@@ -27,7 +28,7 @@ public:
 		}
 	}
 
-	void removeFXComponent(int entityId)
+	static void removeFXComponent(int entityId)
 	{
 		if (hasFXComponent(entityId))
 		{
@@ -35,7 +36,7 @@ public:
 		}
 	}
 
-	bool hasFXComponent(int entityId)
+	static bool hasFXComponent(int entityId)
 	{
 		std::map<int, FXComponent>::iterator it = entities.find(entityId);
 
@@ -46,7 +47,7 @@ public:
 		return false;
 	}
 
-	void update()
+	static void update()
 	{
 		std::map<int, FXComponent>::iterator it = entities.begin();
 		for (; it != entities.end(); it++)
@@ -57,5 +58,9 @@ public:
 
 private:
 
+	static std::map<int, FXComponent> entities;
+	static std::vector<FXComponent> availablePool;
 
 };
+std::map<int, FXComponent> FXSystem::entities = {};
+std::vector<FXComponent> FXSystem::availablePool = std::vector<FXComponent>();

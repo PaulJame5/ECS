@@ -22,63 +22,75 @@
     <Filter Include="Header Files\Systems">
       <UniqueIdentifier>{cfdc371c-0a5b-4ef9-a51a-86bd317b126b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Data Classes">
+      <UniqueIdentifier>{c61805ce-5c6b-4b95-ab3c-58c0c4cedaba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="HealthComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="PositionComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthSystem.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerEntityData.h">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="AIComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="FXComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="GamePadComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="TransformComponent.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="AISystem.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="FXSystem.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="GamePadSystem.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsSystem.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="Systems.h">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Data Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\AIComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\Component.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\FXComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\GamePadComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\HealthComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\PhysicsComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\PositionComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\SpriteRendererComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Components\TransformComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entities\Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entities\PlayerEntityData.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\AISystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\FXSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\GamePadSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\HealthSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\PhysicsSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Systems\Systems.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Include\Gizmos\Vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Game\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,15 +1,16 @@
 #pragma once
-#include "Entity.h"
-#include "Systems.h"
-#include "HealthComponent.h"
+#include "../Components/HealthComponent.h"
 
 
 class HealthSystem
 {
-	std::map<int, HealthComponent> entities;
 
 public:
-	void addHealthComponent(int entityId)
+	HealthSystem() {};
+	~HealthSystem() {};
+
+
+	static void addHealthComponent(int entityId)
 	{
 		if (hasHealthComponent(entityId))
 		{
@@ -18,7 +19,7 @@ public:
 		entities[entityId] = HealthComponent();
 	}
 
-	HealthComponent getHealthComponent(int entityId)
+	static HealthComponent getHealthComponent(int entityId)
 	{
 		if (hasHealthComponent(entityId))
 		{
@@ -27,7 +28,7 @@ public:
 		}
 	}
 
-	void removeHealthComponent(int entityId)
+	static void removeHealthComponent(int entityId)
 	{
 		if (hasHealthComponent(entityId))
 		{
@@ -35,7 +36,7 @@ public:
 		}
 	}
 
-	bool hasHealthComponent(int entityId)
+	static bool hasHealthComponent(int entityId)
 	{
 		std::map<int, HealthComponent>::iterator it = entities.find(entityId);
 
@@ -46,7 +47,7 @@ public:
 		return false;
 	}
 
-	void update() 
+	static void update() 
 	{
 		std::map<int, HealthComponent>::iterator it = entities.begin();
 		for (; it != entities.end(); it++ ) 
@@ -57,5 +58,11 @@ public:
 
 private:
 
+	static std::map<int, HealthComponent> entities;
+	static std::vector<HealthComponent> pool;
 
 };
+
+
+std::map<int, HealthComponent> HealthSystem::entities = {};
+std::vector<HealthComponent> HealthSystem::pool = std::vector<HealthComponent>();
