@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{0B88893B-4F66-4623-8AC6-1BFA657A7777}</ProjectGuid>
     <RootNamespace>Project4</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,9 +76,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SFML_SDK)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -87,9 +89,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SFML_SDK)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,11 +104,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SFML_SDK)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,34 +121,39 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SFML_SDK)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SFML_SDK)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Game\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AIComponent.h" />
-    <ClInclude Include="AISystem.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="FXComponent.h" />
-    <ClInclude Include="FXSystem.h" />
-    <ClInclude Include="GamePadComponent.h" />
-    <ClInclude Include="GamePadSystem.h" />
+    <ClInclude Include="GameEngine\Include\Gizmos\Vector2.h" />
+    <ClInclude Include="Game\Components\AIComponent.h" />
+    <ClInclude Include="Game\Systems\AISystem.h" />
+    <ClInclude Include="Game\Components\Component.h" />
+    <ClInclude Include="Game\Entities\Entity.h" />
+    <ClInclude Include="Game\Components\FXComponent.h" />
+    <ClInclude Include="Game\Systems\FXSystem.h" />
+    <ClInclude Include="Game\Components\GamePadComponent.h" />
+    <ClInclude Include="Game\Systems\GamePadSystem.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="HealthComponent.h" />
-    <ClInclude Include="HealthSystem.h" />
-    <ClInclude Include="PhysicsComponent.h" />
-    <ClInclude Include="PhysicsSystem.h" />
-    <ClInclude Include="PlayerEntityData.h" />
-    <ClInclude Include="PositionComponent.h" />
-    <ClInclude Include="Systems.h" />
-    <ClInclude Include="TransformComponent.h" />
+    <ClInclude Include="Game\Components\HealthComponent.h" />
+    <ClInclude Include="Game\Systems\HealthSystem.h" />
+    <ClInclude Include="Game\Components\PhysicsComponent.h" />
+    <ClInclude Include="Game\Systems\PhysicsSystem.h" />
+    <ClInclude Include="Game\Entities\PlayerEntityData.h" />
+    <ClInclude Include="Game\Components\PositionComponent.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Game\Components\SpriteRendererComponent.h" />
+    <ClInclude Include="Game\Systems\Systems.h" />
+    <ClInclude Include="Game\Components\TransformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

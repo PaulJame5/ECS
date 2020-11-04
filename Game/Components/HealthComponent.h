@@ -13,5 +13,5 @@ public:
 	void setHEalth(int health) { this->health = health; }
 
 private:
-	int health;
+	int health = 100;
 };
